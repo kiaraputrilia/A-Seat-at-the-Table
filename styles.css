@@ -80,7 +80,7 @@ z-index: 1000; /* Ensure it's above other content */
 /* Media query for screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
     .text::before {
-        content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation.\A This dinner prompts participants to question ";
+        content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation.\A This dinner prompts participants to question conventional dining norms, attraction/aversion to the exotic/unfamiliar, and the performativity of fine dining \A experiences when presenting humble dishes.  ";
         white-space: pre-wrap;
     }
 }
