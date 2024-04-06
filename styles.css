@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: scroll; Enable horizontal scrolling */
+    white-space: nowrap; 
+    background-color: black;
+}
+
+.text {
+    position: fixed; /* Position the text fixed to the viewport */
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    z-index: 1000; /* Ensure it's above other content */
+    color: white; /* Text color */
+    font-size: 14px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    }
+
+    
+    .image-container {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: nowrap; /* Prevent wrapping of images and videos */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        width: calc(100vw - 40px); /* Set image container width to full viewport width minus padding */
+        height: 100vh; /* Set image container height to full viewport height */
+    }
+    
+    .gallery-image, .gallery-video {
+        flex: 0 0 auto; /* Prevent images and videos from stretching */
+        object-fit: contain; /* Ensure images and videos maintain aspect ratio */
+        margin-right: 0.5rem; /* Adjust spacing between images and videos as needed */
+    }
+    
+
+    .video-container {
+        display: flex; 
+        flex-wrap: nowrap; 
+        width: auto; 
+        height: 100%;
+        align-items: center;
+    }
+    
+.spotify-wrapper {
+position: absolute; 
+bottom: 20px; /* Adjust bottom position */
+left: 20px; /* Adjust left position */
+z-index: 1000; /* Ensure it's above other content */
+}
+
+.text {
+    font-size: 14px; /* Default font size */
+}
+
+/* Media query for screens smaller than 600px (typical phone screens) */
+/* @media only screen and (max-width: 600px) {
+    .text {
+        font-size: 12px; 
+        display: block;
+    }
+} */
+
+/* Default styles for text */
+.text::before {
+    content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation. This dinner prompts participants to question conventional dining norms, attraction/aversion to the exotic/unfamiliar, and the performativity of fine dining experiences when presenting humble dishes.";
+    display: block; /* Ensure the content is displayed as a block element */
+}
+
+/* Media query for screens smaller than 600px (typical phone screens) */
+@media only screen and (max-width: 600px) {
+    .text::before {
+        content: "<b>A Seat at the Table</b>";
+    }
+}
+
+.text::before {
+    content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation. This dinner prompts participants to question conventional dining norms, attraction/aversion to the exotic/unfamiliar, and the performativity of fine dining experiences when presenting humble dishes.";
+    display: block; /* Ensure the content is displayed as a block element */
+}
+
+/* Media query for screens smaller than 600px (typical phone screens) */
+@media only screen and (max-width: 600px) {
+    .text::before {
+        content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation.\A This dinner prompts participants to question ";
+        white-space: pre-wrap;
+    }
+}
