@@ -6,6 +6,11 @@ body {
     background-color: black;
 }
 
+@font-face {
+    font-family: 'ABCDiatype';
+    src: url('ABCDiatypePlusVariable-Trial.ttf') format('truetype'); 
+}
+
 .text {
     position: fixed; /* Position the text fixed to the viewport */
     top: 20px; /* Adjust top position */
@@ -13,9 +18,8 @@ body {
     z-index: 1000; /* Ensure it's above other content */
     color: white; /* Text color */
     font-size: 14px; /* Font size */
-    font-family: Arial, sans-serif; /* Font family */
-    }
-
+    font-family: 'ABCDiatype', serif;    
+}
     
     .image-container {
         display: flex; /* Use flexbox for layout */
@@ -40,12 +44,28 @@ body {
         align-items: center;
     }
     
-.spotify-wrapper {
-position: absolute; 
-bottom: 20px; /* Adjust bottom position */
-left: 20px; /* Adjust left position */
-z-index: 1000; /* Ensure it's above other content */
-}
+    .spotify-wrapper {
+        position: absolute; 
+        bottom: 20px; /* Adjust bottom position */
+        left: 20px; /* Adjust left position */
+        z-index: 1000; /* Ensure it's above other content */
+    }
+    
+    .spotify-wrapper iframe {
+        border-radius: 12px;
+    }
+    
+    /* Media query for screens smaller than 600px (typical phone screens) */
+    @media only screen and (max-width: 600px) {
+        .spotify-wrapper {
+            position: relative; /* Change positioning to relative on smaller screens */
+            bottom: auto; /* Reset bottom position */
+            left: 20px; /* Reset left position */
+            width: 300px; /* Make it full width */
+            z-index:1000%
+        }       
+     }
+    
 
 .text {
     font-size: 14px; /* Default font size */
@@ -80,7 +100,31 @@ z-index: 1000; /* Ensure it's above other content */
 /* Media query for screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
     .text::before {
-        content: "A Seat at the Table is an installment from my thesis, Perpetually, In Fermentation.\A This dinner prompts participants to question conventional dining norms, attraction/aversion to the exotic/unfamiliar, and the performativity of fine dining \A experiences when presenting humble dishes.  ";
+        content: "A Seat at the Table is an installment from my thesis, Perpetually, In \A Fermentation. This dinner prompts participants to question conventional dining norms, attraction/aversion to the exotic/unfamiliar, and the performativity of \A fine dining experiences when presenting humble dishes.  ";
+        white-space: pre-wrap;
+    }
+}
+
+
+.bottom-right-text {
+    position: fixed; /* Position the text fixed to the viewport */
+    bottom: 20px; /* Adjust bottom position */
+    right: 20px; /* Adjust right position */
+    z-index: 1000; /* Ensure it's above other content */
+    color: white; /* Text color */
+    font-size: 14px; /* Font size */
+    font-family: 'ABCDiatype', serif;    
+}
+
+.bottom-right-text::before {
+    content: "Many thank yous to Kaskara for this fruitful collaboration! Thank you Jimmy for joining us! And thank you to Jack for assisting the dinner! Last but not least, thank you Lakeisha for documenting! "; /* Add your additional text here */
+    display: block; /* Ensure the content is displayed as a block element */
+}
+
+/* Media query for screens smaller than 600px (typical phone screens) */
+@media only screen and (max-width: 600px) {
+    .bottom-right-text::before {
+        content: "\00A0\00A0\00A0\00A0\00A0\00A0Many thank yous to Kaskara for this fruitful collaboration! Thank you Jimmy \00A0\00A0\00A0\00A0\00A0\00A0 for joining us! And thank you to Jack for assisting the dinner! Last but not \00A0\00A0\00A0\00A0\00A0\00A0 least, thank you Lakeisha for documenting! "; /* Add your additional text here */
         white-space: pre-wrap;
     }
 }
